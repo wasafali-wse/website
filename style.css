@@ -55,8 +55,12 @@ nav {
     font-size: 2.5rem;
     background: linear-gradient(to right,lightgreen,greenyellow,orange);
     -webkit-background-clip: text; /* Clip the background to the text */
+    -webkit-text-fill-color: transparent;}
+#nav-part10  {
+    
+    background: linear-gradient(to right,lightgreen,greenyellow,orange);
+    -webkit-background-clip: text; /* Clip the background to the text */
     -webkit-text-fill-color: transparent;
-
 
 }   
 #nav-part2 {
@@ -399,6 +403,18 @@ nav h3 {
     font-size: 3vw;
     position: relative;
     z-index: 9;
+    text-decoration: none;
+}
+#elem-a {
+    font-size: 1vw;
+    position: relative;
+    text-decoration: none; /* This should remove the underline */
+    color: inherit; /* This ensures the text takes the color from its parent */
+}
+
+.elem a {
+    text-decoration: none; /* Optional: Adding this line to ensure all links in .elem have no underline */
+
 }
 
 .elem .overlay {
@@ -409,10 +425,15 @@ nav h3 {
     left: 0;
     top: -100%;
     transition: all ease 0.25s;
+
 }
 
 .elem:hover .overlay {
     top: 0;
+}
+#h3 {
+    font-size: 3vw;
+    text-align: right;
 }
 
 
@@ -441,12 +462,14 @@ nav h3 {
 .swiper {
     width: 100%;
     height: 100%;
+
 }
 
 .swiper-slide {
     width: 30%;
     border-left: 1px solid #aeadad;
     padding: 0 2vw;
+    cursor: pointer;
 }
 
 #page5 {
@@ -754,3 +777,16 @@ nav h3 {
       
     }
 }
+
+
+.heading {
+    font-size: 4rem;
+    margin:50px ;
+}
+.para {
+    font-size: 2rem;
+    margin:50px ;
+
+}
+
+
