@@ -108,6 +108,59 @@ nav {
 #nav-part2 h4:hover a {
     color: #fff;
 }
+.nav-links {
+    display: flex; /* Default to row in larger screens */
+    align-items: center;
+    gap: 1vw;
+}
+
+.nav-links h4 {
+    padding: 10px 20px;
+    border: 1px solid #0000003c;
+    border-radius: 50px;
+    font-weight: 500;
+    color: #000000bb;
+    transition: all ease 0.4s;
+    position: relative;
+    font-size: 18px;
+    overflow: hidden;
+}
+
+.nav-links h4::after {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: black;
+    left: 0;
+    bottom: -100%;
+    border-radius: 50%;
+    transition: all ease 0.4s;
+}
+
+.nav-links h4:hover::after {
+    bottom: 0;
+    border-radius: 0;
+}
+
+.nav-links h4 a {
+    color: #000000bb;
+    text-decoration: none;
+    position: relative;
+    z-index: 10;
+}
+
+.nav-links h4:hover a {
+    color: #fff;
+}
+/*.menu-toggle {
+    display: none;
+    font-size: 2rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 101;
+}*/
 /*this for footer */
 #nav-part5 {
     display: flex;
@@ -158,6 +211,62 @@ nav {
 nav h3 {
     display: none;
 }
+.menu-toggle {
+    display: none; /* Hide by default */
+    font-size: 2rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+/* Breadcrumb container */
+.breadcrumb-nav {
+    background-color: #EFEAE3; /* Light background */
+    padding: 10px 20px;
+    font-size: 14px;
+}
+
+/* Breadcrumb list */
+.breadcrumb {
+    list-style: none; /* Remove default bullets */
+    display: flex; /* Display inline */
+    gap: 5px; /* Space between items */
+    padding: 0;
+    margin: 0;
+    background-color:#EFEAE3 ;
+}
+
+/* Breadcrumb links */
+.breadcrumb li a {
+    text-decoration: none;
+    color: #007bff; /* Link color */
+    transition: color 0.2s;
+}
+
+/* Change color on hover */
+.breadcrumb li a:hover {
+    color: #0056b3;
+}
+
+/* Separator between items */
+.breadcrumb li::after {
+    content: '>'; /* Separator icon */
+    margin: 0 5px; /* Space around separator */
+    color: #6c757d; /* Gray color */
+}
+
+/* Remove separator for the last item */
+.breadcrumb li:last-child::after {
+    content: ''; /* Remove separator */
+}
+
+/* Last breadcrumb item (current page) */
+.breadcrumb li:last-child {
+    font-weight: bold;
+    color: #212529; /* Dark text color */
+}
+
+
 
 #center {
     height: 65vh;
@@ -331,8 +440,30 @@ nav h3 {
 
 #bottom-part2 {
     width: 20%;
+
     /* background-color: aqua; */
 }
+#bottom-part2 h1 {
+    font-size: 3rem;
+    
+    /* background-color: aqua; */
+}
+#bottom-part2 h2 {
+    font-size: 2.5rem;
+    
+    /* background-color: aqua; */
+}
+#bottom-part2 h3 {
+    font-size: 2rem;
+    
+    /* background-color: aqua; */
+}
+#bottom-part2 h3 a {
+    text-decoration: none;
+    color: #000;
+    font-size: 1.6rem;
+}
+
 
 #bottom-part2 img {
     width: 100%;
@@ -344,6 +475,7 @@ nav h3 {
     margin-top: 2vw;
     font-size: 1vw;
 }
+
 
 #page2 #gooey {
     height: 32vw;
@@ -471,6 +603,13 @@ nav h3 {
     padding: 0 2vw;
     cursor: pointer;
 }
+.swiper-slide h3 {
+    font-size: 3rem;
+}
+.swiper-slide p {
+    font-size: 1rem;
+}
+
 
 #page5 {
     height: 100vh;
@@ -554,8 +693,12 @@ nav h3 {
 
 }
 
-@media (max-width:600px) {
 
+@media (max-width:600px) {
+    .breadcrumb {
+        font-size: 12px;
+        flex-wrap: wrap; /* Allow breadcrumbs to wrap on small screens */
+    }
     #page1 {
         min-height: 100vh;
         width: 100vw;
@@ -573,7 +716,7 @@ nav h3 {
         height: 9vh;
     }
 
-    #nav-part2 {
+    /*#nav-part2 {
         display: none;
     }
 
@@ -585,8 +728,33 @@ nav h3 {
         font-size: 4vw;
         font-weight: 200;
         padding-left: 10vw;
+    }*/
+    #nav-part2 {
+        display: none; /* Hidden by default */
+        flex-direction: column; /* Stack links vertically */
+        position: absolute; /* Position for toggle */
+        right: 0;
+        top: 140px; /* Adjust below the nav */
+        background: #EFEAE3; /* Match the navbar color */
+        width: 100%; /* Full width */
+        z-index: 10; /* Ensure it overlays other elements */
+        padding: 10px 0; /* Add padding for better spacing */
+        border-top: 0px solid #ccc; /* Optional border */
     }
 
+    #nav-part2.nav-active {
+        display: flex; /* Show when active */
+        transition: 0.3s;
+    }
+
+    .menu-toggle {
+        display: block; /* Show toggle button in mobile view */
+        background: transparent;
+        border: none;
+        font-size: 24px;
+        cursor: pointer;
+        z-index: 100;
+    }
     #center {
         height: 62vh;
         width: 100%;
@@ -600,6 +768,7 @@ nav h3 {
         flex-direction: column-reverse;
         position: relative;
         z-index: 9;
+
     }
 
     #left h3 {
@@ -662,7 +831,7 @@ nav h3 {
         width: 25px;
         border-radius: 50%;
         display: inline-block;
-        background-color: #FE320A;
+        background-color: yellowgreen;
         margin: 2vw 2vw;
     }
 
@@ -706,7 +875,7 @@ nav h3 {
         width: 62vw;
         position: absolute;
         border-radius: 50%;
-        background: linear-gradient(to top right, #ff2d03, #ff5c0b);
+        background: linear-gradient(to top right, green, yellowgreen,yellow);
         /* background: linear-gradient(to top right,red,blue); */
 
 
@@ -720,6 +889,36 @@ nav h3 {
         animation-timing-function: ease-in-out;
 
     }
+    #fixed-image {
+        height: 55vw;
+        width: 40vw;
+        /* background-color: red; */
+        border-radius: 15px;
+        position: fixed;
+        z-index: 99;
+        left: 50%;
+        top: 25%;
+        display: none;
+        background-size: cover;
+        background-position: center;
+    }
+    .elem h2 {
+        font-size: 5vw;
+        position: relative;
+        z-index: 9;
+        text-decoration: none;
+    }
+    .swiper {
+        width: 100%;
+        height: 80%;
+        padding: 2vw;
+    }
+        .swiper-slide h3 {
+        font-size: 2rem;
+    }
+    .swiper-slide p {
+        font-size: 1rem;
+}
 
 
 }
@@ -788,5 +987,4 @@ nav h3 {
     margin:50px ;
 
 }
-
 
