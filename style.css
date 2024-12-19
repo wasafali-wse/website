@@ -36,7 +36,7 @@ html, body {
 #page1 {
     min-height: 100vh;
     width: 100%;
-    background-color: #EFEAE3;
+    background-color: #fff;/*i am changing color #efeae3*/
     position: relative;
     padding: 0 2vw;
 }
@@ -221,7 +221,7 @@ nav h3 {
 
 /* Breadcrumb container */
 .breadcrumb-nav {
-    background-color: #EFEAE3; /* Light background */
+    background-color: #fff;/*i am changing color #efeae3*/
     padding: 10px 20px;
     font-size: 14px;
 }
@@ -233,7 +233,7 @@ nav h3 {
     gap: 5px; /* Space between items */
     padding: 0;
     margin: 0;
-    background-color:#EFEAE3 ;
+    background-color:#fff;/*i am changing color #efeae3*/
 }
 
 /* Breadcrumb links */
@@ -371,7 +371,7 @@ nav h3 {
 #page2 {
     min-height: 100vh;
     width: 100%;
-    background-color: #EFEAE3;
+    background-color:#fff;/*i am changing color #efeae3*/
     padding: 8vw 0;
     position: relative;
 }
@@ -515,7 +515,7 @@ nav h3 {
 #page3 {
     min-height: 100vh;
     width: 100%;
-    background-color: #EFEAE3;
+    background-color: #fff;/*i am changing color #efeae3*/
     padding: 4vw 0;
 }
 
@@ -587,7 +587,7 @@ nav h3 {
 #page4 {
     height: 70vh;
     width: 100%;
-    background-color: #EFEAE3;
+    background-color: #fff;/*i am changing color #efeae3*/
     padding: 10vw 2vw;
 }
 
